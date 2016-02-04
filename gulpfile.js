@@ -9,11 +9,14 @@
         AutoprefixerPlugin = require('less-plugin-autoprefix'),
         autoprefixer = new AutoprefixerPlugin({browsers: ["last 2 versions"]}),
         rename = require('gulp-rename'),
+        uglify = require('gulp-uglify'),
         nano = require('gulp-cssnano');
 
     gulp.task('default', function () {
         var css,
-            cssMin;
+            cssMin,
+            js,
+            jsMin;
 
         css = gulp.src('./src/vanilla-bs-menu.less')
             .pipe(less({
@@ -31,6 +34,16 @@
             }))
             .pipe(gulp.dest('./dist/'));
 
-        return merge(css, cssMin);
+        js = gulp.src('./src/vanilla-bs-menu.js')
+            .pipe(gulp.dest('./dist/'));
+
+        jsMin = gulp.src('./src/vanilla-bs-menu.js')
+            .pipe(uglify())
+            .pipe(rename({
+                extname: '.min.js'
+            }))
+            .pipe(gulp.dest('./dist/'));
+
+        return merge(css, cssMin, js, jsMin);
     });
 }());
