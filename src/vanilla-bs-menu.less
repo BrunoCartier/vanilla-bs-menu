@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@media (max-width: 768px) {
+  @animation-duration: .3s;
+  @estimated-height: 250px;
+
+  .has-js .menu-toggled {
+    transform: translate3d(0, 0, 0);
+    transition: max-height @animation-duration linear;
+    overflow: hidden;
+    visibility: hidden;
+    max-height: 1px;
+
+    ul {
+      margin: 0 -15px; // Bootstrap
+    }
+
+    &.visible {
+      visibility: visible;
+    }
+
+    &.transition li {
+      transition: max-height @animation-duration linear, opacity @animation-duration linear;
+    }
+
+    &.showed {
+      max-height: @estimated-height;
+
+      li {
+        max-height: @estimated-height / 5;
+        opacity: 1;
+      }
+    }
+
+    &.un-showed {
+      max-height: 1px;
+
+      li {
+        max-height: 1px;
+        opacity: 0
+      }
+    }
+  }
+}

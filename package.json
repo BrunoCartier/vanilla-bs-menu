@@ -1,0 +1,33 @@
+{
+  "name": "vanilla-bs-menu",
+  "version": "0.1.0",
+  "description": "Because I don't want to use jQuery just for a responsive menu.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoCartier/vanilla-bs-menu.git"
+  },
+  "keywords": [
+    "Vanilla",
+    "VanillaJS",
+    "Bootstrap",
+    "BS",
+    "Menu"
+  ],
+  "author": "https://github.com/BrunoCartier",
+  "license": "Fair",
+  "bugs": {
+    "url": "https://github.com/BrunoCartier/vanilla-bs-menu/issues"
+  },
+  "homepage": "https://github.com/BrunoCartier/vanilla-bs-menu#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "less-plugin-autoprefix": "^1.5.1",
+    "merge-stream": "^1.0.0"
+  }
+}
